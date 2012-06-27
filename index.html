@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Countdown</title>
+	<script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js?ver=1.7.1'></script>
+	<script src="jquery.countdown.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			$("#countdown-1").countdown({
+				start_date: 1337326800000,
+				end_date: 1337326805000,
+				format: "(hh) hours, (mm) minutes and (ss) seconds",
+				start: function($element) {
+					console.log("The final countdown has begun");
+				},
+				done: function($element) {
+					console.log("The counter is at zero");
+				},
+				tick: function(time_hash) {
+					console.log(time_hash);
+				}
+			});
+			$("#countdown-2").countdown({
+				start_date: 1337326800000,
+				end_date: 1337326815000,
+				format: "(hh) hours, (mm) minutes and (ss) seconds",
+				start: function($element) {
+					console.log("The final countdown has begun");
+				},
+				done: function($element) {
+					console.log("The counter is at zero");
+				},
+				tick: function(time_hash) {
+					console.log(time_hash);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2 id="countdown-1">0</h2>
+	<h2 id="countdown-2">0</h2>
+</body>
+</html>
