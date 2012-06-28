@@ -7,38 +7,41 @@
 	<script>
 		$(function(){
 			$("#countdown-1").countdown({
-				start_date: 1337326800000,
-				end_date: 1337326805000,
-				format: "(hh) hours, (mm) minutes and (ss) seconds",
+				start_date: 1337210800000,
+				end_date: 1337326800000,
+				format: "%dddd, %hhhh, %mmmm och %ssss",
+				labels: { day: ["dag", "dagar"], hour: ["timme", "timmar"], minute: ["minut", "minuter"], second: ["sekund", "sekunder"] },
 				start: function($element) {
 					console.log("The final countdown has begun");
 				},
 				done: function($element) {
 					console.log("The counter is at zero");
 				},
-				tick: function(time_hash) {
-					console.log(time_hash);
+				tick: function($element, values) {
+					console.log(values);
 				}
 			});
 			$("#countdown-2").countdown({
-				start_date: 1337326800000,
-				end_date: 1337326815000,
-				format: "(hh) hours, (mm) minutes and (ss) seconds",
-				start: function($element) {
-					console.log("The final countdown has begun");
-				},
-				done: function($element) {
-					console.log("The counter is at zero");
-				},
-				tick: function(time_hash) {
-					console.log(time_hash);
-				}
+				start_date: 1337210800000,
+				end_date: 1337326800000,
+				format: "%ddd, %hhh, %mmm and %sss",
+			});
+			$("#countdown-3").countdown({
+				start_date: 1337210700000,
+				end_date: 1337210800000
+			});
+			$("#countdown-4").countdown({
+				start_date: 1337210700000,
+				end_date: 1337210800000,
+				format: "%h:%m:%s"
 			});
 		});
 	</script>
 </head>
 <body>
-	<h2 id="countdown-1">0</h2>
-	<h2 id="countdown-2">0</h2>
+	<h2 id="countdown-1"></h2>
+	<h2 id="countdown-2"></h2>
+	<h2 id="countdown-3"></h2>
+	<h2 id="countdown-4"></h2>
 </body>
 </html>
